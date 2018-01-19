@@ -26,6 +26,8 @@ Game.prototype = {
 	// 更新加载进度
 	updateLoader: function () {
 		var percent = this.gameLoadedCount / this.gameLoadCount;
+		var loadNum=document.getElementById('loadNum');
+		loadNum.innerHTML=(Math.ceil(percent*100))+"%";
 	},
 	// 加载完成回调
 	loadFinishCallback: function () {
@@ -38,6 +40,7 @@ Game.prototype = {
             this.sound.audios['music'].loop = false;
         }
         $("#loading").css("display","none");
+        $("#main").css("display","none");
         this.start();
         /*wx.config(wxConfig);
         //设置分享
