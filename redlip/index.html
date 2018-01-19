@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>小红唇</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="css/kinerLottery.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--横屏提示-->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">请在竖屏下查看</div>
+    </div>
+</div>
+<div id="loading">
+
+</div>
+<div id="shou">
+
+</div>
+<div id="main">
+    <div id="box">
+        <!--<div id="drawLottery">
+            <div id="musicDiv" style="width: 0px;height:30px;position: absolute;top: 10%;left: 10%;border-radius: 15px;overflow: hidden">
+                <img src="images/music_long.png" style="width: 500px;height:30px;" id="musicLong">
+            </div>
+            <div id="page" class="turntable">
+                <div class="outer KinerLottery KinerLotteryContent"><img src="./images/lanren.png"></div>
+                &lt;!&ndash; 大专盘分为三种状态：活动未开始（no-start）、活动进行中(start)、活动结束(completed),可通过切换class进行切换状态，js会根据这3个class进行匹配状态 &ndash;&gt;
+                <div class="inner KinerLotteryBtn start"></div>
+            </div>
+        </div>-->
+    </div>
+    <div id="swicth">
+        <!--<img src="images/music_on.png" id="music_on">
+        <img src="images/music_off.png" id="music_off">-->
+    </div>
+</div>
+    <script>
+        var h5_config = {
+            appName : '',
+            baseUrl : '',
+            baseLink: '',
+            para    : "",//分享链接后携带参数(由建值对组成的字符串，eg:key=1)
+            width   :document.body.clientWidth
+        };
+        //微信设置
+        var wxConfig = {
+            debug:false,
+            appId: '<?php echo $signPackage["appId"]; ?>',
+            timestamp: '<?php echo $signPackage["timestamp"]; ?>',
+            nonceStr: '<?php echo $signPackage["nonceStr"]; ?>',
+            signature: '<?php echo $signPackage["signature"]; ?>',
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage",
+            ]
+        };
+        //手机适配问题
+        function resizeRoot() {
+            var width  = window.innerWidth;
+            var height = window.innerHeight;
+
+            var w = Math.min(width, height);
+            var h = Math.max(width, height);
+
+            var ratio = h / 1120;
+
+            var changeBox          = document.getElementById('main');
+            changeBox.style.cssText = "transform: translate(" + (w - 640) / 2 + "px," + (h - 1120) / 2 + "px) scale(" + ratio + ");" + "-webkit-transform: translate(" + (w - 640) / 2 + "px," + (h - 1120) / 2 + "px) scale(" + ratio + ") ";
+        }
+        resizeRoot();
+        (function () {
+            var winHeight = Math.max(window.innerWidth, window.innerHeight); //获取当前页面高度
+            var winWidth  = window.innerWidth; //获取当前页面高度
+            function resizeDalay() {
+                var thisHeight = window.innerHeight;
+                var thisWidth  = window.innerWidth;
+                //注意：安卓机在点击输入框的时候页面，输入框不会自动上去,此时需要重置一下输入框的位置，在else里写现在的top,if里面写重置的top
+                if (winHeight - thisHeight < 100) {
+                    resizeRoot();
+                }else{
+                }
+            }
+            var id = '';
+            window.addEventListener('resize', function () {
+                id && clearTimeout(id);
+                id = setTimeout(resizeDalay, 300);
+            })
+        }());
+
+    </script>
+   <script src="js/loader.js"></script>
+</body>
+</html>
