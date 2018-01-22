@@ -96,15 +96,21 @@ body,html{
     position: absolute;
     background: #f00000;
 }
-#drawLottery{
+/*#drawLottery{
     width:640px;
     height:1120px;
     left: 0;
     top:1120px;
     position: absolute;
     background: #000000;
+}*/
+#page_5 .start:active {
+    -webkit-transform:scale(.95);
+    -moz-transform:scale(.95);
+    -ms-transform:scale(.95);
+    -o-transform:scale(.95);
+    transform:scale(.95);
 }
-
 
 #swicth>#music_on{
     width: 42px;

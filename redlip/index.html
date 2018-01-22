@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>小红唇</title>
     <link href="css/index.css" rel="stylesheet" type="text/css">
-    <link href="css/kinerLottery.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!--横屏提示-->
@@ -25,14 +24,10 @@
             <img src="images/load_logo.png" class="load_logo">
             <span id="loadNum">0%</span>
         </div>
-        <!--<div id="drawLottery">
-            <div id="musicDiv" style="width: 0px;height:30px;position: absolute;top: 10%;left: 10%;border-radius: 15px;overflow: hidden">
-                <img src="images/music_long.png" style="width: 500px;height:30px;" id="musicLong">
-            </div>
-            <div id="page" class="turntable">
-                <div class="outer KinerLottery KinerLotteryContent"><img src="./images/lanren.png"></div>
-                &lt;!&ndash; 大专盘分为三种状态：活动未开始（no-start）、活动进行中(start)、活动结束(completed),可通过切换class进行切换状态，js会根据这3个class进行匹配状态 &ndash;&gt;
-                <div class="inner KinerLotteryBtn start"></div>
+        <!--<div id="page" class="turntable">
+            <div class="outer KinerLottery KinerLotteryContent"><img src="./images/page_5_065.png"></div>
+            <div class="inner KinerLotteryBtn start">
+                <img src="./images/page_5_066.png">
             </div>
         </div>-->
     </div>
@@ -47,7 +42,8 @@
             baseUrl : '',
             baseLink: '',
             para    : "",//分享链接后携带参数(由建值对组成的字符串，eg:key=1)
-            width   :document.body.clientWidth
+            width   :document.body.clientWidth,
+            username:"董周"
         };
         //微信设置
         var wxConfig = {

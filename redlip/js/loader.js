@@ -32,13 +32,13 @@ Game.prototype = {
 	// 加载完成回调
 	loadFinishCallback: function () {
 		console.log('加载完成');
-        if (!this.sound) {
+        /*if (!this.sound) {
             //这个为多音效
             this.sound = new Sound(this.baseUrl, ['music',"music_1"]);
             this.sound.initSound();
             this.sound.audios['music'].autoplay = false;
             this.sound.audios['music'].loop = false;
-        }
+        }*/
         $("#loading").css("display","none");
         $("#main").css("display","none");
         this.start();
@@ -128,7 +128,7 @@ Game.prototype = {
                         left: item1.rect.x,
                         position: "absolute",
                         "z-index": item1.zIndex,
-                        display: item1.dis,
+                        display: item1.display,
                         "-webkit-animation-name": item1.animates,
                         "-webkit-animation-duration": item1.time + "ms",
                         "-webkit-animation-delay": item1.wait + "ms",
@@ -139,7 +139,27 @@ Game.prototype = {
                         .addClass(item1.class)
                         .attr("id", item1.id)
                         .appendTo($("#" + item.id + ""));
-                } else if (item1.type == "canvas") {
+                }else if (item1.type == "span") {
+                    $("<span>"+item1.comment+"</span>").css({
+                        width:"100%",
+                        left: "51%",
+                        top: item1.rect.y,
+                        position: "absolute",
+                        display: item1.display,
+                        "z-index": item1.zIndex,
+                        color:  item1.color,
+                        "font-size":item1.sizeS+"px",
+                        "line-height":item1.line,
+                        "font-family": "PingFangSC",
+                        "text-align": "center",
+                        transform:"translate(-50%,0)",
+                        "-webkit-transform":"translate(-50%,0)"
+                    })
+                        .attr('id', item1.id)
+                        .addClass(item1.class)
+                        .appendTo($("#" + item.id + ""));
+                }
+                else if (item1.type == "canvas") {
                     $("<canvas></canvas>").css({
                         left: item1.rect.x,
                         top: item1.rect.y,
@@ -166,7 +186,7 @@ Game.prototype = {
 
                     })
                         .attr('id', item1.id)
-                        .addClass(item1.id)
+                        .addClass(item1.className)
                         .appendTo($("#" + item.id + ""));
                     item1.dom.forEach(function (item2) {
                         if (item2.type == "img") {
