@@ -96,14 +96,7 @@ body,html{
     position: absolute;
     background: #f00000;
 }
-/*#drawLottery{
-    width:640px;
-    height:1120px;
-    left: 0;
-    top:1120px;
-    position: absolute;
-    background: #000000;
-}*/
+
 #page_5 .start:active {
     -webkit-transform:scale(.95);
     -moz-transform:scale(.95);

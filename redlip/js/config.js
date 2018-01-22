@@ -7,7 +7,10 @@ var config = {
             {name: "wx", url: "js/m_wx.js", sync: false},
             {name: "jroll", url: "js/jroll.min.js", sync: false},
             {name: "sound", url: "js/howler.min.js", sync: false},
+            {name: "KinerLottery", url: "js/kinerLottery.js", sync: false},
+            {name:"game",url:"game/turnTable.js", sync: false},
             {name:"game",url:"game/gameLogic.js", sync: false}
+
         ],
         images: [
         ],
@@ -179,8 +182,8 @@ var config = {
                 {type:"img",src:"images/page_5_062.png",rect:{x:289,y:137,w:185,h:29},comment:"转出你的大礼包",class:""},
                 {type:"img",src:"images/page_5_063.png",rect:{x:42,y:204,w:556,h:557},comment:"底盘",class:""},
                 {type:"img",src:"images/page_5_064.png",rect:{x:156,y:134,w:127,h:32},comment:"logo1_拷贝_11",class:""},
-                {type:"img",src:"images/page_5_065.png",rect:{x:70,y:237,w:500,h:500},comment:"奖品",class:"outer KinerLottery KinerLotteryContent"},
-                {type:"img",src:"images/page_5_066.png",rect:{x:250,y:380,w:141,h:166},comment:"GO",class:"inner KinerLotteryBtn start"},
+                {type:"img",src:"images/page_5_065.png",rect:{x:70,y:237,w:500,h:500},comment:"奖品",class:"pan"},
+                {type:"img",src:"images/page_5_066.png",rect:{x:250,y:380,w:141,h:166},comment:"GO",class:"start"},
                 {type:"img",src:"images/page_5_067.png",rect:{x:488,y:261,w:80,h:82},comment:"矢量智能对象_拷贝_19",class:""},
                 {type:"img",src:"images/page_5_068.png",rect:{x:442,y:740,w:64,h:65},comment:"矢量智能对象_拷贝_20",class:""},
                 {type:"img",src:"images/page_5_069.png",rect:{x:121,y:677,w:79,h:80},comment:"矢量智能对象_拷贝_21",class:""},

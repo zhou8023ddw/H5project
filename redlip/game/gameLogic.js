@@ -232,7 +232,13 @@ GameLogic.prototype={
         //抽奖页
         var page5 = document.getElementById('page_5');
         page5.addEventListener('touchend', function (e) {
+            e.preventDefault();
+            var classname=e.target.className;
+            if(classname=="start"){
+                $(".pan").css({
 
+                });
+            }
         });
     }
 

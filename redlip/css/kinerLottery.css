@@ -1,0 +1,67 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.turntable {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.turntable .outer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+
+.turntable .outer img {
+    width: 100%;
+}
+.turntable .inner {
+    position: relative;
+    width: 141px;
+    height:166px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-image: url(../images/page_5_066.png);
+    background-size: auto 200px;
+    background-repeat: no-repeat;
+}
+
+.turntable .inner.start:active {
+    -webkit-transform: translate(-50%, -50%) scale(.95);
+    transform: translate(-50%, -50%) scale(.95);
+}
+
+.turntable .inner.start {
+    background-position: 0 0;
+}
+
+.turntable .inner.no-start {
+    background-position: -200px 0;
+}
+
+.turntable .inner.completed {
+    background-position: -400px 0;
+}
